@@ -42,7 +42,6 @@ export default function Home() {
       </div>
       <div className="m-auto w-fit mt-4">
         {quote.a && <ShareTweet author={quote.a} quote={quote.q} />}
-        {/* <ShareTweet author={quote.a} quote={quote.q} /> */}
       </div>
     </main>
   );

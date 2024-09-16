@@ -1,5 +1,5 @@
 // import { ZenQuote } from "@/types/Quote";
-import React, { useEffect } from "react";
+import React from "react";
 import { IconParkSolidBigX } from "./IconParkSolidBigX";
 
 declare global {

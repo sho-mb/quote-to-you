@@ -3,3 +3,9 @@ export type Quote = {
   author: string;
   category: string;
 };
+
+export type ZenQuote = {
+  q: string;
+  a: string;
+  h: string;
+};

@@ -2,6 +2,7 @@
 import { Suspense, useState } from "react";
 import { ZenQuote } from "@/types/Quote";
 import { QuoteButton } from "./components/ui/SubmitButton";
+import ShareTweet from "./components/ui/ShareTweet";
 
 export default function Home() {
   const [quote, setQuote] = useState<ZenQuote>({
@@ -25,7 +26,9 @@ export default function Home() {
       <div className="mt-[100px] text-3xl mb-10">Get quotes for your day!</div>
       <Suspense fallback={<p>Loading Quote....</p>}>
         <div>
-          {quote && <div dangerouslySetInnerHTML={createMarkup(quote.h)}></div>}
+          {quote.h !== "" && (
+            <div dangerouslySetInnerHTML={createMarkup(quote.h)}></div>
+          )}
         </div>
       </Suspense>
       <div className="flex flex-col gap-8 w-fit justify-center items-center m-auto mt-10">
@@ -36,6 +39,10 @@ export default function Home() {
         <a href="https://zenquotes.io/" target="_blank">
           ZenQuotes API
         </a>
+      </div>
+      <div className="m-auto w-fit mt-4">
+        {quote.a && <ShareTweet author={quote.a} quote={quote.q} />}
+        {/* <ShareTweet author={quote.a} quote={quote.q} /> */}
       </div>
     </main>
   );

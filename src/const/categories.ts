@@ -1,26 +1,4 @@
-"use client";
-import React, { useState } from "react";
-
-export const QuoteCategory = () => {
-  const [category, setCategory] = useState<string>("age");
-
-  console.log(category);
-
-  return (
-    <select
-      className="text-black"
-      onChange={(e) => setCategory(e.target.value)}
-    >
-      {categories.map((item, index) => (
-        <option key={index} value={item}>
-          {item}
-        </option>
-      ))}
-    </select>
-  );
-};
-
-const categories = [
+export const categories = [
   "age",
   "alone",
   "amazing",

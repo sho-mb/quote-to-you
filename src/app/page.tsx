@@ -3,7 +3,7 @@ import { useState } from "react";
 import { QuoteBox } from "./components/QuoteBox";
 
 export default function Home() {
-  const [category, setCategory] = useState<string>();
+  const [category, setCategory] = useState<string>("age");
   const [quote, setQuote] = useState<Quote>({
     quote: "",
     author: "",
@@ -11,15 +11,14 @@ export default function Home() {
   });
 
   const handleClick = async () => {
-    const res = await fetch(`http://localhost:3000/api?category=${category}`);
+    const res = await fetch(`/api/ninja?category=${category}`);
     const data = await res.json();
-    console.log(data.data[0]);
     setQuote(data.data[0]);
   };
 
   return (
     <main className="text-center">
-      <div className="mt-[200px] text-3xl mb-10">Get quotes for you day!</div>
+      <div className="mt-[100px] text-3xl mb-10">Get quotes for you day!</div>
       <QuoteBox
         quote={quote.quote}
         author={quote.author}

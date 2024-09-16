@@ -19,12 +19,6 @@ export default function ShareTweet({
   author: string;
   quote: string;
 }) {
-  useEffect(() => {
-    // Twitterウィジェットの再読み込み
-    if (window.twttr) {
-      window.twttr.widgets.load();
-    }
-  }, [author, quote]);
   return (
     <div className="border-white border-0 rounded-full hover:bg-gray-700">
       <a
